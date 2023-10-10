@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" href="style.css">
+  <title>タイピング練習</title>
+</head>
+
+<body>
+
+      <div class="start">
+        <h3 id="gameTitle">タ イ ピ ン グ ゲ ー ム</h3>
+        <div class="gameArea" id="startScreen">
+          <h3 class="top">遊　び　方</h3>
+          <p class="explanation">
+            お題の文字（ひらがな）を<br>
+            入力欄に打ち込みエンター！
+          </p>
+          <p id="choiceTimeArea"><span>
+            制限時間選択</span><br>
+            <input type="radio" name="choiceTimeButton" id="1min" class="choiceTime" value="30"><label for="1min" class="timeLabel">30秒</label>
+            <input type="radio" name="choiceTimeButton" id="2min" class="choiceTime" value="120" checked><label for="2min" class="timeLabel">2分</label>
+            <input type="radio" name="choiceTimeButton" id="3min" class="choiceTime" value="180"><label for="3min" class="timeLabel">3分</label>
+          </p>
+          <p id="choiceGenreArea"><span>
+            ジャンル選択</span><br>
+            <input type="radio" name="choiceGenreButton" id="genre1" class="choiceGenre" value="genre1" checked><label for="genre1" class="genreLabel">都道府県</label>
+            <input type="radio" name="choiceGenreButton" id="genre2" class="choiceGenre" value="genre2"><label for="genre2" class="genreLabel">準備中</label>
+            <input type="radio" name="choiceGenreButton" id="genre3" class="choiceGenre" value="genre3"><label for="genre3" class="genreLabel">準備中</label>
+          </p>
+          <button id="start" class="toPlayScreen">スタート！</button>
+        </div>
+      </div> 
+
+
+      <div id="checkScreenFull">
+        <div id="checkScreen">
+          <h3 id="readyHeader">※ 準備はいいですか？ ※</h3>
+          <h4 id="readyText">
+            ①入力モードを「かな入力」に変更<br>
+            ②Enterキーを押して開始
+          </h4>
+          <input id="imeCheckLabel" type="search" value=" かな入力に変更 → Enterで開始！">
+        </div>
+      </div>
+
+      <div class="gameArea" id="playScreen">
+        <h3 class="top">プ　レ　イ　画　面</h3>
+        <audio id="rightAudio" src="Quiz-Correct_Answer02-1.mp3"></audio>
+        <audio id="wrongAudio" src="Quiz-Wrong_Buzzer02-1.mp3"></audio>
+        <p id="playScreenLabel">
+          <label for="remainingTime">残り時間</label>
+          <input id="remainingTime" type="text" readonly><span>秒</span>
+          <label for="score">スコア</label>
+          <input id="score" type="text" readonly><span>pt（ 文字数 × 10 ）</span>
+        </p>
+        <p id="currentAnsArea">
+          <label for="currentAnsLabel">お題</label>
+          <input id="currentAnsLabel" type="text" readonly>
+        </p>
+        <p id="inputAnsArea">
+          <label for="inputLabel">入力</span>
+          <!-- <input id="inputLabel" type="text" autocomplete="off"> type=textだと予測変換が表示されるためseachに変更-->
+          <input id="inputLabel" type="search">
+          <span id="judge">判定</span>
+        </p>
+        <p>
+        <button id="cancel" class="toStartScreen">中止（トップ画面に戻る）</button>
+        </p>
+      </div>
+
+      <div class="gameArea" id="resultScreen">
+        <h3 class="top">結　果　発　表</h3>
+        <p id="lastScoreArea">
+          <label for="lastScore">スコア</label>
+          <input id="lastScore" type="text" readonly><span>pt</span>
+        </p>
+        <button id="retry" class="toPlayScreen">もう一度プレイ</button>
+        <button id="backToTop" class="toStartScreen">トップ画面に戻る</button>
+      </div>
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
