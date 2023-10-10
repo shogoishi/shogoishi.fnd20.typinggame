@@ -1,0 +1,1 @@
+# shogoishi.fnd20.typinggame
