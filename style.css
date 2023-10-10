@@ -1,0 +1,276 @@
+html,body{
+    overflow: hidden
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+
+    background-image: url(pokemon.png);
+    background-color: rgba(255, 255, 255, 0.7);
+    background-size:cover;
+    background-blend-mode: lighten;
+}
+
+.top {
+    text-align: center;
+    font-size: 35px;
+    margin-top:0px;
+    padding-top: 6px;
+    margin-bottom: 0px;
+    border-bottom: 2px solid;
+}
+
+.choiceTime, .choiceGenre {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+input[type="radio"] {
+    font-size: 10px;
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+        background: #e47bc4;/* マウス選択時の背景色を指定する */
+        color: #ffffff; /* マウス選択時のフォント色を指定する */
+    }
+
+.timeLabel {
+    display: inline-block;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 10px;
+    border: 1px solid;
+    width: 50px;
+    height: 30px;
+    background-color: chartreuse;
+    line-height:30px;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size: 16px;
+} 
+.genreLabel {
+    display: inline-block;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 10px;
+    border: 1px solid;
+    width: 60px;
+    height: 30px;
+    background-color: chartreuse;
+    line-height:30px; /*行の高さを指定する */
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 5px; /* 角を丸くする */
+    font-size: 13px;
+} 
+
+#choiceTimeArea, #choiceGenreArea {
+    background-color: cyan;
+    width: 300px;
+    height: 85px;
+    margin: auto;
+    display: block;
+    font-size: 20px;
+    border: 2px solid;
+}
+
+#choiceGenreArea {
+    margin-top: 2px;
+}
+
+#choiceTimeArea span, #choiceGenreArea span {
+    text-decoration: underline;/*テキストのアンダーライン*/
+}
+
+#start {
+    text-align: center;
+    font-size: 30px;
+    margin-top:20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#playScreenLabel {
+    font-size: 20px;
+}
+label[for="score"] {
+    margin-left: 30px ;
+}
+
+#playScreenLabel span {
+    font-size: 15px;
+}
+
+#remainingTime {
+    text-align: right;
+    font-size: 20px;
+    width: 50px;
+}
+#score {
+    text-align: right;
+    font-size: 20px;
+    width: 50px;
+}
+
+label[for="currentAnsLabel"] {
+    text-align: left;
+    font-size: 25px;
+    margin-left: 10px ;
+}
+
+#currentAnsLabel {
+    font-size: 25px;
+    width: 380px;
+    height: 30px;
+}
+
+label[for="inputLabel"] {
+    text-align: left;
+    font-size: 25px;
+    margin-left: 10px ;
+}
+
+#inputLabel {
+    background-color: aqua;
+    font-size: 25px;
+    width: 330px;
+    height: 33px;
+}
+
+#judge {
+    font-size: 18px;
+    background-color: white;
+    border: 2px solid;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
+    vertical-align:middle;
+}
+
+#currentAnsArea, #inputAnsArea {
+    text-align: left;
+    margin-left: 10px;
+}
+
+#lastScoreArea {
+    font-size: 35px;
+}
+#lastScore {
+    font-size: 35px;
+    width: 120px;
+    height: 35px;
+    vertical-align:auto;
+    text-align: right;
+}
+
+#lastScoreArea span {
+    font-size: 25px;
+}
+
+#retry, #backToTop {
+    text-align: center;
+    font-size: 20px;
+    margin-top:30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;/*カーソルを合わせると手のマークになる*/
+}
+
+#backToTop {
+    margin-left: 28px;
+}
+
+button {
+    margin-left: 0px;
+}
+
+.gameArea {
+    width: 520px;
+    height: 450px;
+    background-color:orange ;
+    text-align: center;
+    margin: auto; /*画面中央に配置*/
+    border: 2px solid;
+}
+
+.explanation {
+    font-size: 20px;
+}
+
+#readyHeader {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 25px;
+}
+#readyText {
+    margin-top: 0px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+
+#checkScreenFull {
+
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    margin: auto;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#checkScreen {
+    width: 350px;
+    height: 170px;
+    background-color: rgba(75, 235, 27, 0.9);/*background-colorでrgbaを選択することで、背景の透明度まで指定できる。opacityを使った場合文字含め全体が透過するため、背景のみ透過したい場合はこれを使うのが良い**/
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 3px solid;/* ボックスの枠線。solidは線種で実線。 */
+}
+
+#imeCheckLabel {
+    font-size: 15px;
+    width: 250px;
+}
+
+
+#gameTitle {
+    font-size: 50px;
+    text-align: center;
+    margin:0px;
+}
+
+
+#startScreen{
+    display:block;
+}
+
+#playScreen {
+    display: none;
+}
+
+#resultScreen {
+    display: none;
+}
